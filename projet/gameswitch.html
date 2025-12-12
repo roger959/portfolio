@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Switch - Projet</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .back-arrow {
+            position: fixed;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid #00d4ff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #00d4ff;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .back-arrow:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+            border-color: #00ffff;
+            color: #00ffff;
+        }
+
+        .back-arrow:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .back-arrow::before {
+            content: "←";
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .back-arrow {
+                left: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .back-arrow::before {
+                font-size: 24px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="background-video">
+        <video autoplay muted loop id="bg-video">
+            <source src="asset/y2mate com   Anime Purple Evening Sky 4K Short Screensaver Live Wallpaper Relaxing Background Window.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo de fond.
+        </video>
+    </div>
+    
+    <a href="index.html" class="back-arrow" title="Retour à l'accueil"></a>
+
+    <div class="container">
+        <h1>🎮 Game Switch – Projet de première année</h1>
+
+        <div class="container">
+            <h2>📜 Description du projet</h2>
+            <p>
+                Game Switch est un projet de groupe réalisé lors de ma première année. Il s'agit d'une entreprise fictive spécialisée dans la vente et l'échange de jeux vidéo, aussi bien en version physique que dématérialisée. L'objectif était de concevoir un site e-commerce fonctionnel tout en simulant la création d'une vraie structure d'entreprise.
+            </p>
+            <img src="site/image gamer/page d'acceuil.png" alt="">
+        </div>
+
+        <div class="container">
+            <h2>💼 Structure de l'entreprise</h2>
+            <p>
+                Nous avons décidé de structurer Game Switch en tant que <strong>SAS</strong>, une forme juridique offrant de la flexibilité pour répartir les rôles et gérer le capital. Les postes ont été répartis ainsi :
+            </p>
+            <ul>
+                <li>Président / Directeur général</li>
+                <li>Développeur web</li>
+                <li>Responsable marketing</li>
+                <li>Responsable juridique</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>🧱 Technologies et outils utilisés</h2>
+            <ul>
+                <li><strong>HTML & CSS</strong> – pour développer les pages statiques</li>
+                <li><strong>Visual Studio Code</strong> – éditeur de code</li>
+                <li><strong>Trello</strong> – pour la gestion de projet</li>
+                <li><strong>Google Docs</strong> – pour la rédaction des documents juridiques</li>
+            </ul>
+            <img src="site/image gamer/TrelloGuideChapter1.jpg" alt="Interface Trello utilisée pour le projet Game Switch">
+        </div>
+
+        <div class="container">
+            <h2>🌐 Fonctionnalités du site</h2>
+            
+            <h3>🛒 Page d'achat</h3>
+            <img src="site/image gamer/produits.png" alt="">
+            <p>
+                Un catalogue permettait aux utilisateurs de filtrer les jeux par console, genre ou prix. Chaque jeu avait une fiche avec description, image et bouton de commande.
+            </p>
+
+            <h3>🔁 Page d'échange communautaire</h3>
+            <img src="site/image gamer/page d'change.png" alt="">
+            <p>
+                Une section permettait aux utilisateurs de proposer des jeux à échanger entre membres, favorisant ainsi la création d'une communauté active.
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>🛠️ Compétences développées</h2>
+            <ul>
+                <li>Travailler en mode projet</li>
+                <li>Appliquer des bases juridiques à un cas fictif</li>
+                <li>Concevoir une structure de site web responsive</li>
+                <li>Collaborer efficacement au sein d'une équipe</li>
+                <li>Utiliser des outils de gestion de projet</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>🎓 Conclusion</h2>
+            <p>
+                Game Switch m'a permis de développer à la fois mes compétences techniques et organisationnelles. Ce projet m'a beaucoup appris sur la gestion d'équipe, la conception d'un site fonctionnel et les réflexions concrètes liées à la création d'entreprise.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<style>
+    img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+}
+
+</style>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="app.js" defer></script>
+    <style>
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .card h2 {
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #e0e0e0;
+        }
+
+        .card a.btn {
+            display: inline-block;
+            background-color: #00d4ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            margin-top: 10px;
+        }
+
+        .card a.btn:hover {
+            background-color: #00b8e6;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-video">
+        <video autoplay muted loop id="bg-video">
+            <source src="asset/y2mate com   Anime Purple Evening Sky 4K Short Screensaver Live Wallpaper Relaxing Background Window.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="Accueil">
+        <a href="index.html">ACCUEIL</a>
+        <a href="projets.html">PROJETS</a>
+        <a href="veille.html">VEILLE</a>  
+        <a href="entreprise.html">STAGE/ENTREPRISE</a>     
+        <a href="documentation.html">DOCUMENTATION</a>   
+        <a href="contact.html">CONTACT</a>   
+    </div>
+
+    <div class="container">
+        <h1>Mes Projets</h1>
+        <div class="cards">
+            <!-- Projet 1 -->
+            <div class="card"> 
+                <h2>Stage</h2>
+                <p>une presentation de mon stage dans l'entreprise big emotion <p>
+                <a href="stage.html" class="btn">En savoir plus</a>
+            </div>
+
+            <div class="card">
+                <h2>Entreprise</h2>
+                <p>Actuellement en recherche d’une entreprise pour continuer à développer mes compétences en informatique.</p>
+                <a href="entreprise.html" class="btn">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

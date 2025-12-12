@@ -1,0 +1,359 @@
+/* ---- Reset & Base ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- Canvas d'arrière-plan ---- */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ---- Container principal centré ---- */
+.container,
+.content-box {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* --- Conteneur centré pour Lottie + bouton --- */
+.centered-content {
+    position: relative;
+    z-index: 10; /* au-dessus du canvas */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 24px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Contrôles (regroupement si besoin) */
+.center-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Lottie responsive */
+#lottie-animation {
+    width: min(60vw, 480px);
+    height: auto;
+    max-height: 60vh;
+    display: block;
+}
+
+/* ---- Titre néon ---- */
+.neon-text {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+    color: #00b7ff;
+    text-shadow: 
+        0 0 10px rgba(0, 183, 255, 0.8),
+        0 0 20px rgba(0, 183, 255, 0.6),
+        0 0 30px rgba(0, 183, 255, 0.4),
+        0 0 40px rgba(0, 183, 255, 0.2);
+    animation: neonPulse 2s ease-in-out infinite alternate;
+    text-align: center;
+    width: 100%;
+}
+
+@keyframes neonPulse {
+    from {
+        text-shadow: 
+            0 0 10px rgba(0, 183, 255, 0.8),
+            0 0 20px rgba(0, 183, 255, 0.6),
+            0 0 30px rgba(0, 183, 255, 0.4),
+            0 0 40px rgba(0, 183, 255, 0.2);
+    }
+    to {
+        text-shadow: 
+            0 0 20px rgba(0, 183, 255, 1),
+            0 0 30px rgba(0, 183, 255, 0.8),
+            0 0 40px rgba(0, 183, 255, 0.6),
+            0 0 50px rgba(0, 183, 255, 0.4);
+    }
+}
+
+/* ---- Sous-titre / Description principale ---- */
+.subtitle,
+.welcome-text {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    color: #b8c5d6;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* ---- Bouton de démarrage ---- */
+#start-button {
+    display: inline-block;
+    padding: clamp(10px, 3.2vw, 16px) clamp(24px, 6vw, 40px);
+    margin-top: 20px;
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: clamp(1px, 0.3vw, 2px);
+    color: #ffffff;
+    background: linear-gradient(135deg, #00b7ff 0%, #0088cc 100%);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 20px rgba(0, 183, 255, 0.4),
+        0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 11;
+}
+
+#start-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+#start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 0 30px rgba(0, 183, 255, 0.6),
+        0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+#start-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+#start-button.clicked {
+    transform: scale(0.95);
+    box-shadow: 
+        0 0 15px rgba(0, 183, 255, 0.3),
+        0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#start-button:active {
+    transform: scale(0.92);
+}
+
+/* ---- Description / Paragraphe ---- */
+.description,
+p {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    line-height: 1.8;
+    color: #b8c5d6;
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+    width: 100%;
+}
+
+/* ---- Cartes de contenu ---- */
+.card,
+.info-card {
+    background: rgba(26, 31, 58, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 183, 255, 0.2);
+    border-radius: 15px;
+    padding: clamp(20px, 4vw, 30px);
+    margin: 20px auto;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover,
+.info-card:hover {
+    border-color: rgba(0, 183, 255, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(0, 183, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* ---- Titres secondaires ---- */
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #00b7ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 183, 255, 0.5);
+    text-align: center;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: #4db8ff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ---- Listes ---- */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+ul li {
+    padding: 10px 0;
+    color: #b8c5d6;
+    position: relative;
+    padding-left: 25px;
+}
+
+ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #00b7ff;
+    font-size: 1.2rem;
+}
+
+/* ---- Responsive optimisé ---- */
+@media (max-width: 768px) {
+    .container,
+    .content-box {
+        padding: 30px 20px;
+        min-height: 100vh;
+    }
+
+    .neon-text {
+        margin-bottom: 15px;
+    }
+
+    .subtitle,
+    .welcome-text {
+        margin-bottom: 25px;
+    }
+
+    #start-button {
+        margin-top: 15px;
+    }
+
+    #lottie-animation {
+        width: min(80vw, 420px);
+        max-height: 50vh;
+    }
+
+    .centered-content {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    #start-button {
+        min-width: 140px;
+        padding: clamp(8px, 3.5vw, 14px) 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container,
+    .content-box {
+        padding: 20px 15px;
+    }
+
+    .card,
+    .info-card {
+        border-radius: 10px;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+
+    #lottie-animation {
+        width: 86vw;
+        max-height: 46vh;
+    }
+
+    #start-button {
+        min-width: 120px;
+        font-size: clamp(0.85rem, 3.5vw, 1rem);
+        padding: 10px 18px;
+    }
+}
+
+/* ---- Centrage vertical parfait ---- */
+@media (min-height: 600px) {
+    .container,
+    .content-box {
+        justify-content: center;
+    }
+}
+
+/* ---- Petits écrans en hauteur ---- */
+@media (max-height: 600px) {
+    .container,
+    .content-box {
+        min-height: auto;
+        padding: 20px;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .neon-text {
+        margin-bottom: 10px;
+    }
+
+    .subtitle,
+    .welcome-text {
+        margin-bottom: 15px;
+    }
+
+    #start-button {
+        margin-top: 10px;
+    }
+}

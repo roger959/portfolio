@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="all.css">
+
+    <!-- Lottie Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+
+    <!-- (Optionnel) Particles.js / Stats.js si utilisés ailleurs -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+</head>
+<body>
+    <!-- Canvas pour les particules (plein écran, pointer-events: none) -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Conteneur centré pour Lottie + bouton -->
+    <main class="centered-content" role="main" aria-labelledby="hero-title">
+        <div id="lottie-animation" aria-hidden="true"></div>
+
+        <div class="center-controls">
+            <a href="../index.html" id="start-button" style="display: inline-block; text-decoration: none; color: inherit;">LET'S GO</a>
+        </div>
+    </main>
+
+    <!-- (Optionnel) compteur ou autre éléments -->
+    <div class="count-particles" aria-hidden="true" style="display:none;">
+        <span class="js-count-particles">--</span>
+    </div>
+
+    <!-- Script principal -->
+    <script src="all.js"></script>
+</body>
+</html>

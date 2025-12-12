@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Librairie API - Projet</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        .back-arrow {
+            position: fixed;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid #00d4ff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #00d4ff;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .back-arrow:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+            border-color: #00ffff;
+            color: #00ffff;
+        }
+
+        .back-arrow:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .back-arrow::before {
+            content: "←";
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .back-arrow {
+                left: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .back-arrow::before {
+                font-size: 24px;
+            }
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        img {
+            display: block;
+            max-width: 90%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-video">
+        <video autoplay muted loop id="bg-video">
+            <source src="asset/y2mate com   Anime Purple Evening Sky 4K Short Screensaver Live Wallpaper Relaxing Background Window.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la vidéo de fond.
+        </video>
+    </div>
+
+    <a href="index.html" class="back-arrow" title="Retour aux projets"></a>
+
+
+    <div class="container">
+        <h1>📚 Librairie API – Projet individuel</h1>
+
+        <div class="container">
+            <h2>📜 Description du projet</h2>
+            
+            <p>
+                Lors de ma première année, j'ai réalisé un projet individuel intitulé <strong>Librairie API</strong>, un site web de consultation de livres à partir d’une API. Ce site permettait de parcourir un catalogue riche avec des fonctionnalités comme la recherche, la consultation de détails et l’ajout de livres en favoris.
+            </p>
+             <img src="site/image libbrairie/Capture d’écran 2025-06-23 170440.png" alt="">
+        </div>
+
+        <div class="container">
+            <h2>🔧 Technologies utilisées</h2>
+            <ul>
+                <li><strong>PHP</strong> – pour la logique côté serveur</li>
+                <li><strong>CSS</strong> – pour le design de l’interface</li>
+                <li><strong>JavaScript</strong> – pour interagir avec l’API</li>
+                <li><strong>XAMPP</strong> – pour héberger en local et gérer la base de données</li>
+                <li><strong>GitHub</strong> – pour la gestion de versions</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>🔐 Connexion sécurisée, base de données et gestion utilisateur</h2>
+            
+            
+            <p>
+                L'un des aspects majeurs de ce projet a été la mise en place d'un <strong>espace de connexion sécurisé</strong>, permettant aux utilisateurs d'accéder à un compte personnel. L’interface de cette section a été pensée pour être simple d’utilisation, tout en respectant les règles de sécurité et de validation côté serveur. Les utilisateurs devaient saisir un <strong>nom d'utilisateur</strong> et un <strong>mot de passe</strong>, et des contrôles étaient en place pour éviter les erreurs de saisie ou les injections SQL.
+            </p>
+                <img src="site/image libbrairie/Capture d’écran 2025-06-23 170313.png" alt="">
+              
+               <p>
+        Une fois connecté, l'utilisateur a également la possibilité de <strong>modifier ses informations personnelles</strong>, comme son nom d'utilisateur ou son mot de passe. Pour cela, une interface dédiée a été développée avec des champs préremplis et une vérification côté serveur.
+    </p>
+    <p>
+        Cette fonctionnalité assure que les données modifiées sont <strong>validées et sécurisées</strong> avant d’être enregistrées dans la base de données. Par exemple, le mot de passe est automatiquement haché avec un algorithme de cryptage (comme <code>password_hash</code> de PHP) avant stockage.
+    </p>
+    <p>
+        Cela permet à chaque utilisateur de gérer son compte de manière autonome et en toute sécurité.
+    </p> 
+    <img src="site/image libbrairie/Capture d’écran 2025-06-23 170607.png" alt=""> 
+
+
+
+
+            <p>
+                Pour rendre cette fonctionnalité possible, j’ai utilisé <strong>XAMPP</strong> comme environnement de développement local. Grâce à ce serveur Apache/PHP intégré, j’ai pu simuler un hébergement réel sur mon poste de travail et gérer efficacement les interactions entre le site et la <strong>base de données SQL</strong>.
+            </p>
+            <p>
+                J’ai conçu une base de données SQL structurée pour stocker les <strong>informations des utilisateurs</strong> (identifiants, mots de passe hachés, données de session) ainsi que les livres favoris. Le modèle relationnel comprenait des tables telles que :
+            </p>
+            <img src="site/image libbrairie/Capture d’écran 2025-06-23 170711.png" alt="">
+            <ul>
+                <li><code>utilisateurs</code> : pour stocker les identifiants, mots de passe et rôles</li>
+                <li><code>livres</code> : pour les métadonnées récupérées via l’API (titre, auteur, image, description…)</li>
+                <li><code>favoris</code> : pour gérer la relation entre utilisateurs et livres enregistrés</li>
+            </ul>
+            <p>
+                Cette partie du projet m’a permis de consolider mes compétences en <strong>sécurité web</strong>, <strong>gestion des bases de données relationnelles</strong> et <strong>développement backend avec PHP</strong>.
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>⭐ Système de favoris</h2>
+            <img src="site/image libbrairie/Capture d’écran 2025-06-23 170541.png" alt="">
+            <p>
+                Une fonctionnalité d’ajout aux <strong>favoris</strong> a été intégrée : chaque utilisateur connecté pouvait ajouter des livres à sa liste personnelle pour les retrouver plus tard.
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>🧠 Métadonnées et API</h2>
+            <p>
+                Grâce à l’utilisation de l’API, chaque livre affichait des <strong>métadonnées</strong> telles que le titre, l’auteur, la description, l’éditeur et l’image de couverture. Cela permettait une navigation riche et interactive.
+            </p>
+            <img src="site/image libbrairie/Capture d’écran 2025-06-23 173539.png" alt="">
+        </div>
+
+        <div class="container">
+            <h2>🛠️ Compétences développées</h2>
+            <ul>
+                <li>Créer un espace membre avec connexion/déconnexion</li>
+                <li>Manipuler une base de données avec XAMPP</li>
+                <li>Faire des requêtes vers une API externe</li>
+                <li>Ajouter des fonctionnalités personnalisées comme les favoris</li>
+                <li>Travailler seul en autonomie sur toutes les parties du projet</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>🎓 Conclusion</h2>
+            <p>
+                Ce projet m’a permis de combiner mes connaissances en développement web, en gestion d’API et en base de données. Il m’a aussi permis de structurer un site complet avec une logique utilisateur avancée tout en travaillant en autonomie.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>App Météo - Projet</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="app.js" defer></script>
+    <style>
+        .back-arrow {
+            position: fixed;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid #00d4ff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #00d4ff;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .back-arrow:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+            border-color: #00ffff;
+            color: #00ffff;
+        }
+
+        .back-arrow::before {
+            content: "←";
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        img {
+            display: block;
+            max-width: 90%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-video">
+        <video autoplay muted loop id="bg-video">
+            <source src="asset/y2mate com   Anime Purple Evening Sky 4K Short Screensaver Live Wallpaper Relaxing Background Window.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <a href="index.html" class="back-arrow" title="Retour aux projets"></a>
+
+
+    <div class="container">
+        <h1>🌦️ Application Météo – Projet individuel</h1>
+
+        <div class="container">
+            <h2>📜 Description du projet</h2>
+            <p>
+                Dans le cadre de ma formation, j’ai développé une application météo en autonomie. L’objectif était de proposer une interface simple et intuitive permettant d’obtenir la météo actuelle dans tous les pays du monde.
+                Grâce à la géolocalisation, l’utilisateur peut également voir la température et les conditions météorologiques de son environnement immédiat.
+            </p>
+            <img src="site/image meteo/Capture d’écran 2025-06-24 172416.png" alt="">
+            <p>Interface utilisateur de l'application météo</p>
+            <img src="site/image meteo/Capture d’écran 2025-06-24 172516.png" alt="">
+        </div>
+
+        <div class="container">
+            <h2>🔧 Technologies utilisées</h2>
+            <ul>
+                <li><strong>HTML</strong> – pour la structure de la page</li>
+                <li><strong>CSS</strong> – pour le design responsive et agréable</li>
+                <li><strong>JavaScript</strong> – pour interagir avec l’API météo et gérer la géolocalisation</li>
+                <li><strong>API OpenWeatherMap</strong> – pour récupérer les données météorologiques en temps réel</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>📍 Fonctionnalités principales</h2>
+            <ul>
+                <li>Recherche météo par <strong>ville ou pays</strong></li>
+                <li>Affichage de la <strong>température actuelle</strong>, du <strong>ressenti</strong>, de l’<strong>humidité</strong> et du <strong>vent</strong></li>
+                <li>Utilisation de la <strong>géolocalisation</strong> pour afficher la météo autour de l’utilisateur</li>
+                <li>Interface responsive et <strong>adaptée aux mobiles</strong></li>
+            </ul>
+            <img src="site/image meteo/Capture d’écran 2025-06-24 172449.png" alt="">
+        </div>
+
+        <div class="container">
+            <h2>💡 Objectifs pédagogiques</h2>
+            <p>
+                Ce projet m’a permis de mieux comprendre le fonctionnement des <strong>API REST</strong> en JavaScript, la gestion des permissions de géolocalisation dans le navigateur, et d’améliorer mes compétences en structuration HTML/CSS moderne.
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>🛠️ Compétences développées</h2>
+            <ul>
+                <li>Manipuler des <strong>données JSON</strong> issues d’une API</li>
+                <li>Utiliser <strong>navigator.geolocation</strong> pour détecter la position de l’utilisateur</li>
+                <li>Créer une interface claire avec <strong>des données en temps réel</strong></li>
+                <li>Travailler <strong>de manière autonome</strong> sur toutes les étapes du développement</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h2>🎓 Conclusion</h2>
+            <p>
+                L’application météo m’a permis d’aborder un sujet concret, utile et facile à tester. Ce projet m’a donné davantage de maîtrise des <strong>API externes</strong> et des interactions dynamiques avec l’utilisateur.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
