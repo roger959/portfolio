@@ -1,0 +1,15 @@
+{
+  "nav.parcours": "PARCOURSE",
+  "nav.projets": "PROJECTS",
+  "nav.competences": "SKILLS",
+  "nav.veille": "RESEARCH",
+  "nav.stage": "INTERNSHIP",
+  "nav.documentation": "DOCUMENTATION",
+  "btn.linkedin": "My LinkedIn",
+  "btn.download_cv": "Download my CV",
+  "presentation.title": "ROGER JUNIOR LUMBALA",
+  "presentation.subtitle": "Student in BTS SIO (SLAM)",
+  "presentation.intro": "My name is Roger, I'm 19 years old. I'm currently studying at IPSSI in Paris, first year of BTS SIO (IT Services for Organizations), SLAM specialization.",
+  "presentation.note": "Currently still studying 🎓, on this portfolio you will find below the different studies and professional projects I have undertaken during my career.",
+  "home.passion": "Passionate about IT and new technologies, I chose this BTS after my high school diploma to continue my studies in application development."
+}

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             startButton.classList.add("clicked");
             startButton.style.transform = "scale(0.95)";
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "../portfolio.html";
             }, 600);
         });
     }

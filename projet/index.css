@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* === Variables CSS === */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: rgba(10, 10, 30, 0.8);
+    --accent-primary: #00d4ff;
+    --accent-glow: rgba(0, 212, 255, 0.3);
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-glow: 0 0 30px var(--accent-glow);
+    --border-radius: clamp(8px, 1.32vw, 14px);
+}
+
+/* === Reset & Base === */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* === Vidéo Background === */
+.background-video {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5) blur(1px);
+}
+
+/* === Container === */
+.container {
+    max-width: min(90%, 1000px);
+    margin: clamp(1.32rem, 3.3vw, 2.64rem) auto;
+    padding: clamp(0.99rem, 2.64vw, 1.98rem);
+    background: var(--bg-secondary);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-glow);
+}
+
+/* === Typographie === */
+h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--accent-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--accent-primary), #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: var(--accent-primary);
+    margin: 1.32rem 0 0.66rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+    color: var(--accent-primary);
+    margin: 0.99rem 0 0.53rem;
+    font-weight: 500;
+}
+
+p, li {
+    color: var(--text-secondary);
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.8;
+}
+
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: #00ffff;
+}
+
+/* === Listes === */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+li {
+    padding: 0.8rem 1.2rem;
+    margin: 0.5rem 0;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+li:hover {
+    background: var(--accent-glow);
+    border-color: var(--accent-primary);
+    transform: translateX(5px);
+}
+
+/* === Images === */
+img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+}
+
+/* === Code === */
+code {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #00ffff;
+    font-family: 'Courier New', monospace;
+}
+
+/* === Bouton retour === */
+.back-arrow {
+    position: fixed;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: rgba(0, 212, 255, 0.1);
+    border: 2px solid #00d4ff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #00d4ff;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.back-arrow:hover {
+    background: rgba(0, 212, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+    border-color: #00ffff;
+    color: #00ffff;
+}
+
+.back-arrow::before {
+    content: "←";
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .back-arrow {
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .back-arrow::before {
+        font-size: 24px;
+    }
+
+    .container {
+        margin: 1rem 0.5rem;
+        padding: 1.2rem 0.8rem;
+    }
+
+    img {
+        max-width: 95%;
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .back-arrow {
+        left: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    li {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* === Projects Grid (pour la page d'accueil des projets) === */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-card {
+    background: linear-gradient(135deg, rgba(24, 31, 43, 0.92), rgba(6, 10, 20, 0.95));
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.06);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-primary), #00ffff);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px var(--accent-glow);
+    border-color: var(--accent-primary);
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.project-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.tech-badge {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* === Navigation Menu === */
+nav {
+    position: sticky;
+    top: 0.6rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    margin: 0.6rem auto;
+    max-width: 90%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-glow);
+    z-index: 999;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    background: var(--accent-glow);
+    border-color: var(--accent-primary);
+}
+
+/* === Footer === */
+footer {
+    position: relative;
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--glass-border);
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.back-to-top {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-primary), #0099ff);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-to-top::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff;
+    transform: rotate(45deg) translateY(2px);
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateX(-50%) translateY(-6px);
+    background: linear-gradient(135deg, #00aaff, #0066ff);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top:hover::before {
+    transform: rotate(45deg) translateY(-2px);
+}

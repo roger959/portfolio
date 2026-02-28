@@ -75,6 +75,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: brightness(0.5) blur(1px);
         }
 
         img {
@@ -96,12 +97,12 @@
 <body>
     <div class="background-video">
         <video autoplay muted loop id="bg-video">
-            <source src="asset/y2mate com   Anime Purple Evening Sky 4K Short Screensaver Live Wallpaper Relaxing Background Window.mp4" type="video/mp4" />
+            <source src="../asset/y2mate com   Anime Purple Evening Sky 4K Short Screensaver Live Wallpaper Relaxing Background Window.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la vidéo de fond.
         </video>
     </div>
 
-    <a href="index.html" class="back-arrow" title="Retour aux projets"></a>
+    <a href="../portfolio.html#projets" class="back-arrow" title="Retour aux projets"></a>
 
 
     <div class="container">
@@ -113,7 +114,7 @@
             <p>
                 Lors de ma première année, j'ai réalisé un projet individuel intitulé <strong>Librairie API</strong>, un site web de consultation de livres à partir d’une API. Ce site permettait de parcourir un catalogue riche avec des fonctionnalités comme la recherche, la consultation de détails et l’ajout de livres en favoris.
             </p>
-             <img src="site/image libbrairie/Capture d’écran 2025-06-23 170440.png" alt="">
+             <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170440.png" alt="">
         </div>
 
         <div class="container">
@@ -134,7 +135,7 @@
             <p>
                 L'un des aspects majeurs de ce projet a été la mise en place d'un <strong>espace de connexion sécurisé</strong>, permettant aux utilisateurs d'accéder à un compte personnel. L’interface de cette section a été pensée pour être simple d’utilisation, tout en respectant les règles de sécurité et de validation côté serveur. Les utilisateurs devaient saisir un <strong>nom d'utilisateur</strong> et un <strong>mot de passe</strong>, et des contrôles étaient en place pour éviter les erreurs de saisie ou les injections SQL.
             </p>
-                <img src="site/image libbrairie/Capture d’écran 2025-06-23 170313.png" alt="">
+                <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170313.png" alt="">
               
                <p>
         Une fois connecté, l'utilisateur a également la possibilité de <strong>modifier ses informations personnelles</strong>, comme son nom d'utilisateur ou son mot de passe. Pour cela, une interface dédiée a été développée avec des champs préremplis et une vérification côté serveur.
@@ -145,7 +146,7 @@
     <p>
         Cela permet à chaque utilisateur de gérer son compte de manière autonome et en toute sécurité.
     </p> 
-    <img src="site/image libbrairie/Capture d’écran 2025-06-23 170607.png" alt=""> 
+    <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170607.png" alt="">
 
 
 
@@ -156,7 +157,7 @@
             <p>
                 J’ai conçu une base de données SQL structurée pour stocker les <strong>informations des utilisateurs</strong> (identifiants, mots de passe hachés, données de session) ainsi que les livres favoris. Le modèle relationnel comprenait des tables telles que :
             </p>
-            <img src="site/image libbrairie/Capture d’écran 2025-06-23 170711.png" alt="">
+            <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170711.png" alt="">
             <ul>
                 <li><code>utilisateurs</code> : pour stocker les identifiants, mots de passe et rôles</li>
                 <li><code>livres</code> : pour les métadonnées récupérées via l’API (titre, auteur, image, description…)</li>
@@ -169,7 +170,7 @@
 
         <div class="container">
             <h2>⭐ Système de favoris</h2>
-            <img src="site/image libbrairie/Capture d’écran 2025-06-23 170541.png" alt="">
+            <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170541.png" alt="">
             <p>
                 Une fonctionnalité d’ajout aux <strong>favoris</strong> a été intégrée : chaque utilisateur connecté pouvait ajouter des livres à sa liste personnelle pour les retrouver plus tard.
             </p>
@@ -180,7 +181,7 @@
             <p>
                 Grâce à l’utilisation de l’API, chaque livre affichait des <strong>métadonnées</strong> telles que le titre, l’auteur, la description, l’éditeur et l’image de couverture. Cela permettait une navigation riche et interactive.
             </p>
-            <img src="site/image libbrairie/Capture d’écran 2025-06-23 173539.png" alt="">
+            <img src="../site/image libbrairie/Capture d'écran 2025-06-23 173539.png" alt="">
         </div>
 
         <div class="container">
