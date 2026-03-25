@@ -400,3 +400,19 @@ footer {
 .back-to-top:hover::before {
     transform: rotate(45deg) translateY(-2px);
 }
+
+/* === GitHub Link Styling === */
+.github-link {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.5);
+    padding-bottom: 2px;
+}
+
+.github-link:hover {
+    color: #00ffff;
+    border-bottom-color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}

@@ -1,6 +1,5 @@
 // --- Défilement automatique des compétences ---
 (function setupSkillsCarousel() {
-    // Attendre que le DOM soit chargé
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
@@ -9,53 +8,55 @@
 
     function init() {
         const skillsLists = document.querySelectorAll('.skills-list');
-        
+
         skillsLists.forEach((skillsList) => {
-            // Vérifier qu'il y a des compétences
-            const skills = skillsList.querySelectorAll('.skill-item');
+            const skills = Array.from(skillsList.querySelectorAll('.skill-item'));
             if (skills.length === 0) return;
 
-            // Créer un wrapper pour le défilement
+            const isTools = skillsList.classList.contains('skills-tools');
+
+            // Créer le wrapper
             const wrapper = document.createElement('div');
             wrapper.className = 'skills-carousel-wrapper';
             skillsList.parentNode.insertBefore(wrapper, skillsList);
-            
-            // Créer le conteneur de défilement
+
+            // Créer le track — items placés directement dedans (pas de sous-liste)
             const track = document.createElement('div');
-            track.className = 'skills-carousel-track';
-            
-            // Cloner la liste originale
-            const originalContent = skillsList.cloneNode(true);
-            const clonedContent = skillsList.cloneNode(true);
-            
-            // Ajouter les deux listes au track
-            track.appendChild(originalContent);
-            track.appendChild(clonedContent);
-            
-            // Remplacer la liste originale par le wrapper
+            track.className = 'skills-carousel-track' + (isTools ? ' skills-carousel-track--tools' : '');
             wrapper.appendChild(track);
+
+            // Supprimer la liste originale
             skillsList.remove();
-            
-            // Calculer la largeur totale pour l'animation
+
+            // Ajouter le premier jeu d'items
+            skills.forEach(item => track.appendChild(item.cloneNode(true)));
+
             setTimeout(() => {
-                const trackWidth = originalContent.scrollWidth;
-                const animationDuration = trackWidth / 40; // Vitesse: 40px par seconde
-                
-                track.style.setProperty('--track-width', `-${trackWidth}px`);
-                track.style.setProperty('--animation-duration', `${animationDuration}s`);
-                
-                // Démarrer l'animation
+                // Mesurer le gap CSS réel du track
+                const gapPx = parseFloat(getComputedStyle(track).columnGap) || (isTools ? 16 : 24);
+
+                // Pitch = largeur d'un jeu + 1 gap (pour jointure seamless entre deux jeux)
+                const pitch = track.scrollWidth + gapPx;
+
+                // Nombre de jeux supplémentaires pour remplir 3x la largeur de l'écran
+                const numExtra = Math.ceil((window.innerWidth * 3) / pitch) + 2;
+
+                for (let i = 0; i < numExtra; i++) {
+                    skills.forEach(item => track.appendChild(item.cloneNode(true)));
+                }
+
+                // Vitesse : 60px/s pour outils, 45px/s pour compétences
+                const speed = isTools ? 60 : 45;
+                const duration = pitch / speed;
+
+                track.style.setProperty('--scroll-distance', pitch + 'px');
+                track.style.setProperty('--animation-duration', duration + 's');
                 track.classList.add('animate');
-            }, 100);
-            
+            }, 200);
+
             // Pause au survol
-            wrapper.addEventListener('mouseenter', () => {
-                track.style.animationPlayState = 'paused';
-            });
-            
-            wrapper.addEventListener('mouseleave', () => {
-                track.style.animationPlayState = 'running';
-            });
+            wrapper.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+            wrapper.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
         });
     }
 })();
