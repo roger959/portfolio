@@ -85,11 +85,10 @@
             margin: 20px auto;
             border-radius: 12px;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease;
         }
 
         img:hover {
-            transform: scale(1.03);
             box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
         }
     </style>
@@ -114,7 +113,7 @@
             <p>
                 Lors de ma première année, j'ai réalisé un projet individuel intitulé <strong>Librairie API</strong>, un site web de consultation de livres à partir d’une API. Ce site permettait de parcourir un catalogue riche avec des fonctionnalités comme la recherche, la consultation de détails et l’ajout de livres en favoris.
             </p>
-             <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170440.png" alt="">
+             <img src="../site/image libbrairie/acceuil.png" alt="Page d'accueil de la librairie API">
         </div>
 
         <div class="container">
@@ -123,7 +122,7 @@
                 <li><strong>PHP</strong> – pour la logique côté serveur</li>
                 <li><strong>CSS</strong> – pour le design de l’interface</li>
                 <li><strong>JavaScript</strong> – pour interagir avec l’API</li>
-                <li><strong>XAMPP</strong> – pour héberger en local et gérer la base de données</li>
+                <li><strong>Docker</strong> – pour exécuter le site et la base de données en environnement local</li>
                 <li><strong>GitHub</strong> – pour la gestion de versions</li>
             </ul>
         </div>
@@ -135,7 +134,7 @@
             <p>
                 L'un des aspects majeurs de ce projet a été la mise en place d'un <strong>espace de connexion sécurisé</strong>, permettant aux utilisateurs d'accéder à un compte personnel. L’interface de cette section a été pensée pour être simple d’utilisation, tout en respectant les règles de sécurité et de validation côté serveur. Les utilisateurs devaient saisir un <strong>nom d'utilisateur</strong> et un <strong>mot de passe</strong>, et des contrôles étaient en place pour éviter les erreurs de saisie ou les injections SQL.
             </p>
-                <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170313.png" alt="">
+                <img src="../site/image libbrairie/inscription.png" alt="Formulaire d'inscription utilisateur">
               
                <p>
         Une fois connecté, l'utilisateur a également la possibilité de <strong>modifier ses informations personnelles</strong>, comme son nom d'utilisateur ou son mot de passe. Pour cela, une interface dédiée a été développée avec des champs préremplis et une vérification côté serveur.
@@ -146,18 +145,18 @@
     <p>
         Cela permet à chaque utilisateur de gérer son compte de manière autonome et en toute sécurité.
     </p> 
-    <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170607.png" alt="">
+    <img src="../site/image libbrairie/profil.png" alt="Page de modification du profil utilisateur">
 
 
 
 
             <p>
-                Pour rendre cette fonctionnalité possible, j’ai utilisé <strong>XAMPP</strong> comme environnement de développement local. Grâce à ce serveur Apache/PHP intégré, j’ai pu simuler un hébergement réel sur mon poste de travail et gérer efficacement les interactions entre le site et la <strong>base de données SQL</strong>.
+                Pour rendre cette fonctionnalité possible, j’ai utilisé <strong>Docker</strong> comme environnement de développement local. Grâce à la conteneurisation, j’ai pu lancer le site et la <strong>base de données SQL</strong> dans un environnement isolé, stable et proche d’un déploiement réel.
             </p>
             <p>
-                J’ai conçu une base de données SQL structurée pour stocker les <strong>informations des utilisateurs</strong> (identifiants, mots de passe hachés, données de session) ainsi que les livres favoris. Le modèle relationnel comprenait des tables telles que :
+                J’ai conçu une base de données SQL structurée pour stocker les <strong>informations des utilisateurs</strong> (identifiants, mots de passe hachés, données de session) ainsi que les livres favoris. Docker m’a permis d’orchestrer facilement les différents services du projet et de gérer proprement les échanges entre l’application PHP et la base de données. Le modèle relationnel comprenait des tables telles que :
             </p>
-            <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170711.png" alt="">
+            <img src="../site/image libbrairie/docker qui tourne .png" alt="Environnement de développement local en cours d'exécution">
             <ul>
                 <li><code>utilisateurs</code> : pour stocker les identifiants, mots de passe et rôles</li>
                 <li><code>livres</code> : pour les métadonnées récupérées via l’API (titre, auteur, image, description…)</li>
@@ -170,7 +169,7 @@
 
         <div class="container">
             <h2>⭐ Système de favoris</h2>
-            <img src="../site/image libbrairie/Capture d'écran 2025-06-23 170541.png" alt="">
+            <img src="../site/image libbrairie/favoris.png" alt="Liste des livres favoris">
             <p>
                 Une fonctionnalité d’ajout aux <strong>favoris</strong> a été intégrée : chaque utilisateur connecté pouvait ajouter des livres à sa liste personnelle pour les retrouver plus tard.
             </p>
@@ -181,7 +180,7 @@
             <p>
                 Grâce à l’utilisation de l’API, chaque livre affichait des <strong>métadonnées</strong> telles que le titre, l’auteur, la description, l’éditeur et l’image de couverture. Cela permettait une navigation riche et interactive.
             </p>
-            <img src="../site/image libbrairie/Capture d'écran 2025-06-23 173539.png" alt="">
+            <img src="../site/image libbrairie/liste_livre.png" alt="Résultats de recherche de livres via l'API">
         </div>
 
         <div class="container">
