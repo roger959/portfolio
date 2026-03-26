@@ -60,19 +60,45 @@
             filter: brightness(0.5) blur(1px);
         }
 
-        img {
+        .weather-shot {
             display: block;
-            max-width: 90%;
+            width: min(68%, 560px);
+            max-width: 100%;
             height: auto;
             margin: 20px auto;
             border-radius: 12px;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: none !important;
+            transition: none !important;
         }
 
-        img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+        .weather-shot:hover {
+            transform: none !important;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .image-caption {
+            margin-top: -6px;
+            margin-bottom: 6px;
+            text-align: center;
+            color: #e6f7ff;
+            font-size: 0.95rem;
+        }
+
+        .image-context {
+            max-width: min(68%, 560px);
+            margin: 0 auto 20px;
+            color: #d6efff;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .weather-shot,
+            .image-context {
+                width: min(88%, 560px);
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -95,9 +121,15 @@
                 Dans le cadre de ma formation, j’ai développé une application météo en autonomie. L’objectif était de proposer une interface simple et intuitive permettant d’obtenir la météo actuelle dans tous les pays du monde.
                 Grâce à la géolocalisation, l’utilisateur peut également voir la température et les conditions météorologiques de son environnement immédiat.
             </p>
-            <img src="../site/image meteo/Capture d'écran 2025-06-24 172416.png" alt="">
-            <p>Interface utilisateur de l'application météo</p>
-            <img src="../site/image meteo/Capture d'écran 2025-06-24 172516.png" alt="">
+            <img class="weather-shot" src="../site/image meteo/1.png" alt="Vue globale de l'application météo">
+            <p class="image-caption">Vue globale de l'application météo</p>
+            <p class="image-context">Cette première capture présente l'ensemble de l'application météo avec son interface principale et l'organisation globale des informations affichées à l'utilisateur.</p>
+            <img class="weather-shot" src="../site/image meteo/2.png" alt="Rendu de l'application avec géolocalisation sélectionnée">
+            <p class="image-caption">Affichage après sélection de la géolocalisation</p>
+            <p class="image-context">Cette deuxième capture montre le rendu obtenu lorsque l'utilisateur autorise la géolocalisation pour afficher la météo correspondant à sa position actuelle.</p>
+            <img class="weather-shot" src="../site/image meteo/3.png" alt="Rendu de l'application avec un lieu choisi au hasard">
+            <p class="image-caption">Exemple de recherche avec un lieu choisi au hasard</p>
+            <p class="image-context">Cette dernière capture illustre l'affichage météo après la sélection d'un lieu au hasard, afin de montrer que l'application peut aussi être utilisée sans géolocalisation.</p>
         </div>
 
         <div class="container">
@@ -118,7 +150,6 @@
                 <li>Utilisation de la <strong>géolocalisation</strong> pour afficher la météo autour de l’utilisateur</li>
                 <li>Interface responsive et <strong>adaptée aux mobiles</strong></li>
             </ul>
-            <img src="../site/image meteo/Capture d'écran 2025-06-24 172449.png" alt="">
         </div>
 
         <div class="container">
