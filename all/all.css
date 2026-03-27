@@ -326,25 +326,40 @@ p {
 /* ---- Cartes de contenu ---- */
 .card,
 .info-card {
-    background: rgba(26, 31, 58, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 183, 255, 0.2);
-    border-radius: 15px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 30%),
+        linear-gradient(180deg, rgba(14, 22, 38, 0.94), rgba(8, 14, 24, 0.96));
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
     padding: clamp(20px, 4vw, 30px);
     margin: 20px auto;
     max-width: 800px;
     width: 100%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before,
+.info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 22%),
+        radial-gradient(circle at top right, rgba(0, 183, 255, 0.16), transparent 28%);
+    pointer-events: none;
 }
 
 .card:hover,
 .info-card:hover {
-    border-color: rgba(0, 183, 255, 0.5);
+    border-color: rgba(137, 219, 255, 0.24);
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.4),
-        0 0 20px rgba(0, 183, 255, 0.2);
-    transform: translateY(-5px);
+        0 26px 60px rgba(0, 0, 0, 0.34),
+        0 0 28px rgba(0, 183, 255, 0.1);
+    transform: none;
 }
 
 /* ---- Titres secondaires ---- */

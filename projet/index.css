@@ -6,6 +6,8 @@
     --bg-secondary: rgba(10, 10, 30, 0.8);
     --accent-primary: #00d4ff;
     --accent-glow: rgba(0, 212, 255, 0.3);
+    --card-border-strong: rgba(137, 219, 255, 0.22);
+    --card-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
     --text-primary: #ffffff;
     --text-secondary: #e0e0e0;
     --glass-bg: rgba(255, 255, 255, 0.05);
@@ -60,6 +62,52 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-glow);
+}
+body > .container {
+    max-width: min(92%, 1120px);
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+}
+
+body > .container > h1 {
+    margin-bottom: 1.6rem;
+}
+
+/* Cards de contenu des pages projet */
+body > .container > .container {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    max-width: 100%;
+    margin: 1.25rem 0;
+    padding: clamp(1.15rem, 2.4vw, 1.8rem);
+    background: rgba(12, 20, 34, 0.9);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+body > .container > .container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), transparent 28%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > .container > .container > * {
+    position: relative;
+    z-index: 1;
+}
+
+body > .container > .container:hover {
+    border-color: var(--card-border-strong);
+    box-shadow: 0 24px 52px rgba(0, 0, 0, 0.32);
 }
 
 /* === Typographie === */
@@ -209,6 +257,11 @@ code {
         max-width: 95%;
         margin: 15px auto;
     }
+
+    body > .container > .container {
+        padding: 1.1rem;
+        border-radius: 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -242,53 +295,65 @@ code {
 }
 
 .project-card {
-    background: linear-gradient(135deg, rgba(24, 31, 43, 0.92), rgba(6, 10, 20, 0.95));
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 30%),
+        linear-gradient(180deg, rgba(15, 24, 40, 0.94), rgba(7, 11, 21, 0.96));
     backdrop-filter: blur(18px);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 1.6rem;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.06);
+    box-shadow: var(--card-shadow);
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    isolation: isolate;
 }
 
 .project-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-primary), #00ffff);
-    transform: scaleX(0);
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 22%),
+        radial-gradient(circle at top right, rgba(0, 212, 255, 0.18), transparent 30%);
     transition: var(--transition);
+    z-index: 0;
 }
 
-.project-card:hover::before {
-    transform: scaleX(1);
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 23px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 50px var(--accent-glow);
-    border-color: var(--accent-primary);
+    transform: none;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.34), 0 0 28px rgba(0, 212, 255, 0.1);
+    border-color: var(--card-border-strong);
 }
 
 .project-icon {
     font-size: 2.5rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .project-card h3 {
     margin: 0;
     font-size: 1.3rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .project-card p {
@@ -297,6 +362,33 @@ code {
     font-size: 0.95rem;
     flex-grow: 1;
     text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.project-card .github-link,
+body > .container > .container .github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 0.9rem;
+    margin-top: 0.4rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d9f6ff;
+}
+
+body > .container > .container h2 {
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+}
+
+body > .container > .container p + img,
+body > .container > .container ul + img,
+body > .container > .container img + p,
+body > .container > .container p + ul {
+    margin-top: 1rem;
 }
 
 .project-tech {
@@ -304,6 +396,8 @@ code {
     flex-wrap: wrap;
     gap: 0.5rem;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .tech-badge {
