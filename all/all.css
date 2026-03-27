@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap');
+
 /* ---- Reset & Base ---- */
 * {
     margin: 0;
@@ -6,8 +8,10 @@
 }
 
 body {
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    font-family: 'Space Grotesk', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(0, 183, 255, 0.08), transparent 30%),
+        linear-gradient(180deg, #09111d 0%, #0d1726 100%);
     color: #ffffff;
     overflow-x: hidden;
     min-height: 100vh;
@@ -59,6 +63,126 @@ body {
     text-align: center;
 }
 
+.hero-card {
+    width: min(1040px, 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+    gap: 36px;
+    align-items: center;
+    padding: clamp(28px, 4vw, 48px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    background:
+        linear-gradient(140deg, rgba(255, 255, 255, 0.04), transparent 30%),
+        linear-gradient(180deg, rgba(10, 20, 34, 0.92), rgba(7, 13, 24, 0.84));
+    backdrop-filter: blur(14px);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 35%);
+    pointer-events: none;
+}
+
+.hero-card::after {
+    content: "";
+    position: absolute;
+    top: -90px;
+    right: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 36px;
+    transform: rotate(18deg);
+    background: linear-gradient(135deg, rgba(0, 183, 255, 0.24), rgba(0, 183, 255, 0.02));
+    pointer-events: none;
+}
+
+.hero-copy,
+.hero-visual {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-copy {
+    text-align: left;
+}
+
+.hero-name {
+    font-family: 'Sora', 'Space Grotesk', sans-serif;
+    font-size: clamp(2.15rem, 5vw, 3.9rem);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    margin: 0;
+    text-transform: uppercase;
+    color: #f8fbff;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.hero-name span {
+    display: block;
+}
+
+.hero-name span:last-child {
+    margin-left: clamp(20px, 4vw, 72px);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(182, 226, 255, 0.9);
+}
+
+.hero-role {
+    margin: 14px auto 0;
+    max-width: 420px;
+    font-size: clamp(0.92rem, 1.2vw, 1rem);
+    line-height: 1.5;
+    color: #d6e1ef;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.hero-visual {
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    isolation: isolate;
+}
+
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, rgba(0, 183, 255, 0.16) 0%, rgba(0, 183, 255, 0.06) 36%, transparent 68%);
+    filter: blur(6px);
+    z-index: 0;
+}
+
+.hero-visual::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(168, 225, 255, 0.14);
+    box-shadow:
+        0 0 0 28px rgba(255, 255, 255, 0.02),
+        0 0 0 56px rgba(0, 183, 255, 0.03);
+    z-index: 0;
+}
+
 /* Contrôles (regroupement si besoin) */
 .center-controls {
     display: flex;
@@ -70,10 +194,14 @@ body {
 
 /* Lottie responsive */
 #lottie-animation {
-    width: min(60vw, 480px);
+    width: min(100%, 230px);
     height: auto;
-    max-height: 60vh;
+    max-height: 230px;
     display: block;
+    position: relative;
+    z-index: 2;
+    opacity: 0.92;
+    filter: drop-shadow(0 18px 35px rgba(0, 183, 255, 0.18));
 }
 
 /* ---- Titre néon ---- */
@@ -144,6 +272,7 @@ body {
         0 4px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
     z-index: 11;
+    text-decoration: none;
 }
 
 #start-button::before {
@@ -266,6 +395,33 @@ ul li::before {
         min-height: 100vh;
     }
 
+    .hero-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .hero-name span:last-child {
+        margin-left: 0;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-role {
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visual {
+        min-height: 260px;
+    }
+
     .neon-text {
         margin-bottom: 15px;
     }
@@ -297,12 +453,43 @@ ul li::before {
 
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        padding: 0;
     }
 
     .container,
     .content-box {
         padding: 20px 15px;
+    }
+
+    .centered-content {
+        padding: 14px;
+    }
+
+    .hero-card {
+        padding: 22px 16px;
+        border-radius: 24px;
+    }
+
+    .hero-name {
+        font-size: clamp(1.9rem, 10vw, 3rem);
+    }
+
+    #lottie-animation {
+        width: min(100%, 180px);
+        max-height: 180px;
+    }
+
+    .hero-visual::before {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-visual::after {
+        width: 170px;
+        height: 170px;
+        box-shadow:
+            0 0 0 20px rgba(255, 255, 255, 0.02),
+            0 0 0 40px rgba(0, 183, 255, 0.03);
     }
 
     .card,

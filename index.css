@@ -103,8 +103,8 @@ p { font-size: clamp(0.95rem, 1.1vw, 1.05rem); color: var(--text-secondary); }
     color: var(--accent-primary);
     text-decoration: none;
     font-weight: 600;
-    font-size: clamp(0.54rem, 1.2vw, 0.66rem);
-    padding: 0.36rem 0.72rem;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    padding: 0.5rem 0.85rem;
     border-radius: 6px;
     border: 1px solid transparent;
     transition: var(--transition);
@@ -297,7 +297,7 @@ h2 {
 }
 
 h3 {
-    font-size: clamp(0.79rem, 1.98vw, 0.99rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--accent-primary);
     margin: 0.99rem 0 0.53rem;
     font-weight: 500;
@@ -305,7 +305,7 @@ h3 {
 
 p, li {
     color: var(--text-secondary);
-    font-size: clamp(0.627rem, 1.32vw, 0.726rem);
+    font-size: clamp(0.98rem, 1.2vw, 1.05rem);
     line-height: 1.8;
 }
 
@@ -539,7 +539,7 @@ a:hover {
     transition: var(--transition);
     box-shadow: 0 4px 20px var(--accent-glow);
     margin-top: 0.66rem;
-    font-size: 0.66rem;
+    font-size: 0.95rem;
 }
 
 .btn-linkedin {
@@ -994,7 +994,7 @@ li:hover {
     
     .skills-carousel-track--tools .skill-item {
         padding: 0.8rem;
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
     
     .skills-carousel-track--tools .skill-item img {

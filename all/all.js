@@ -20,17 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         tl.add({
-            targets: ".neon-text",
+            targets: ".hero-kicker, .hero-name, .hero-role",
             opacity: [0, 1],
             translateY: [-20, 0],
         })
         .add({
-            targets: "#start-button",
+            targets: ".hero-description",
+            opacity: [0, 1],
+            translateY: [16, 0],
+        }, "-=450")
+        .add({
+            targets: "#start-button, .secondary-button",
             opacity: [0, 1],
             scale: [0.9, 1],
         }, "-=400")
         .add({
-            targets: ".content-box, .container",
+            targets: ".hero-visual",
             opacity: [0, 1],
             translateY: [20, 0],
         }, "-=400");
