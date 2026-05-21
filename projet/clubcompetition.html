@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projet Club et Competitions - Projet</title>
+    <title>Club et Competition - Projet</title>
     <link rel="stylesheet" href="index.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="app.js" defer></script>
+    <style>
+        .project-shot {
+            display: block;
+            width: min(78%, 760px);
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .project-shot:hover {
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+        }
+
+        .image-caption {
+            margin-top: -8px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #e6f7ff;
+            font-size: 0.95rem;
+        }
+
+        .github-link {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.5);
+            padding-bottom: 2px;
+        }
+
+        .github-link:hover {
+            color: #00ffff;
+            border-bottom-color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .project-shot {
+                width: min(92%, 760px);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="background-video">
@@ -19,64 +62,102 @@
     <a href="../portfolio.html#projets" class="back-arrow" title="Retour aux projets"></a>
 
     <div class="container">
-        <h1>🏆 Projet Club et Competitions</h1>
+        <h1>🏆 Club et Competition - Projet de groupe</h1>
 
         <div class="container">
             <h2>📜 Description du projet</h2>
             <p>
-                Club et Competitions est une application de gestion de club sportif. Le projet centralise les operations principales : gestion des competitions, suivi des membres, actualites, commentaires et notifications.
+                Club et Competition est un projet realise en equipe dans le cadre de ma formation. L'objectif etait de concevoir une plateforme complete pour aider un club a organiser ses competitions et a centraliser ses informations.
             </p>
             <p>
-                L'objectif est de proposer une solution unique accessible sur web et mobile, avec une API centralisee pour garantir la coherence des donnees.
+                Le projet propose une interface moderne permettant de consulter les competitions, de suivre les actualites du club et d'acceder aux informations principales depuis un espace clair et structure.
             </p>
+            <img class="project-shot" src="../site/image projet club et competition/Capture d’écran 2026-05-17 135017.png" alt="Image de la page d'accueil" />
+            <p class="image-caption">Image de la page d'accueil</p>
         </div>
 
         <div class="container">
-            <h2>🏗️ Architecture</h2>
+            <h2>🎯 Objectifs du projet</h2>
             <ul>
-                <li><strong>api-symfony/</strong> : backend principal en Symfony (API REST)</li>
-                <li><strong>react-web/</strong> : front web avec React et Vite</li>
-                <li><strong>react-mobile/</strong> : front mobile avec React Native et Expo</li>
-                <li><strong>database-project/</strong> : scripts SQL (club_bdd.sql)</li>
-                <li><strong>API-backend/</strong> : ancien backend conserve pour compatibilite</li>
+                <li>Centraliser les informations utiles du club sur une seule plateforme</li>
+                <li>Faciliter la consultation des competitions et de leur suivi</li>
+                <li>Proposer une interface simple a utiliser pour les membres</li>
+                <li>Structurer les donnees de maniere fiable pour le long terme</li>
             </ul>
         </div>
 
         <div class="container">
             <h2>🧱 Stack technique</h2>
             <ul>
-                <li><strong>Backend</strong> : PHP 8.2+, Symfony, Doctrine, MySQL</li>
-                <li><strong>Web</strong> : React 19, Vite</li>
-                <li><strong>Mobile</strong> : React Native, Expo SDK 54</li>
+                <li><strong>Frontend</strong> : HTML, CSS, JavaScript</li>
+                <li><strong>Backend</strong> : PHP / Symfony</li>
+                <li><strong>Base de donnees</strong> : MySQL</li>
+                <li><strong>Outils</strong> : GitHub, VS Code, Trello</li>
             </ul>
+        </div>
+
+        <div class="container">
+            <h2>🗄️ Base de donnees</h2>
+            <p>
+                Cette capture presente la structure de la base de donnees du projet, avec les tables utilisees pour gerer les membres, les competitions et les donnees associees.
+            </p>
+            <img class="project-shot" src="../site/image projet club et competition/capture d'ecran de la base de donnée.png" alt="Capture de la base de donnees du projet" />
+            <p class="image-caption">Capture de la base de donnees</p>
         </div>
 
         <div class="container">
             <h2>⚙️ Fonctionnalites principales</h2>
             <ul>
-                <li>Gestion des competitions et des participants</li>
-                <li>Gestion des roles : admin, organisateur, membre</li>
-                <li>Publication d'actualites et commentaires</li>
-                <li>Notifications liees aux actions importantes</li>
-                <li>Acces multi-plateforme : web et mobile</li>
+                <li>Consultation des competitions du club</li>
+                <li>Affichage des informations principales des evenements</li>
+                <li>Espace d'actualites et de communication autour du club</li>
+                <li>Navigation claire pour trouver rapidement les pages utiles</li>
+                <li>Interface responsive adaptee aux ecrans desktop et mobile</li>
             </ul>
+        </div>
+
+        <div class="container">
+            <h2>📰 Module actualites</h2>
+            <p>
+                Cette section permet de publier et consulter les actualites du club pour garder les membres informes des nouveautes et des evenements a venir.
+            </p>
+            <img class="project-shot" src="../site/image projet club et competition/Capture d’écran 2026-05-17 135045.png" alt="Image des actualites" />
+            <p class="image-caption">Image des actualites</p>
+        </div>
+
+        <div class="container">
+            <h2>🔐 Page de connexion</h2>
+            <p>
+                L'authentification donne acces aux espaces personnalises selon le role de l'utilisateur et securise les operations sensibles de la plateforme.
+            </p>
+            <img class="project-shot" src="../site/image projet club et competition/Capture d’écran 2026-05-17 135105.png" alt="Image de la page de connexion" />
+            <p class="image-caption">Image de la page de connexion</p>
         </div>
 
         <div class="container">
             <h2>🛠️ Competences developpees</h2>
             <ul>
-                <li>Concevoir et developper une API REST complete</li>
-                <li>Structurer et manipuler une base de donnees relationnelle</li>
-                <li>Synchroniser un backend avec deux clients (web et mobile)</li>
-                <li>Travailler en mode projet sur une architecture multi-dossiers</li>
-                <li>Mettre en place des controles d'acces selon les roles</li>
+                <li>Travailler en equipe sur un projet web complet</li>
+                <li>Concevoir une interface orientee utilisateur</li>
+                <li>Structurer des donnees metier autour des competitions</li>
+                <li>Assurer la coherence entre frontend et backend</li>
+                <li>Organiser le travail avec des outils de suivi de projet</li>
             </ul>
+        </div>
+
+        <div class="container">
+            <h2>🛡️ Navbar cote admin</h2>
+            <p>
+                La navbar admin centralise les actions de gestion et facilite la navigation rapide vers les pages d'administration.
+            </p>
+            <img class="project-shot" src="../site/image projet club et competition/Capture d’écran 2026-05-17 135222.png" alt="Image de la navbar cote admin" />
+            <p class="image-caption">Image de la navbar cote admin</p>
         </div>
 
         <div class="container">
             <h2>🎓 Conclusion</h2>
             <p>
-                Ce projet m'a permis de consolider mes competences en architecture applicative, en developpement full-stack et en organisation de projet. Il illustre une approche complete, de la base de donnees jusqu'aux interfaces web et mobile.
+                Ce projet m'a permis de renforcer mes competences techniques et methodologiques, notamment en organisation d'equipe, en structuration d'un projet web et en gestion des fonctionnalites liees a un besoin concret.
             </p>
         </div>
 
